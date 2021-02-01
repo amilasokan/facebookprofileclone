@@ -1,65 +1,29 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Navbar from '../components/navbar';
+import TimelineHeader from '../components/timelineHeader';
+import Intro from '../components/intro';
+import Photos from '../components/photos';
+import CreatePost from '../components/createPost';
+import Posts from '../components/posts';
+import MainPost from '../components/mainPost';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="antialiased">
+      <Navbar />
+      <TimelineHeader />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className="px-52 grid grid-cols-12 pt-4 gap-4 bg-fFill z-0 pb-56">
+        <div className="col-span-5 col-start-1 row-start-1 space-y-4">
+          <Intro />
+          <Photos />
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <div className="flex-row row-start-1 col-span-7 col-start-6 space-y-4">
+          <CreatePost />
+          <Posts />
+          <MainPost />
+          <MainPost />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
